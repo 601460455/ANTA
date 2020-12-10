@@ -1,8 +1,6 @@
 //下拉列表 移入移出事件
 
-console.log(1)
-console.log(nickname)
-console.log(111)
+
 $('.navul > ul > li').mouseover(function() {
     $('.tow-boxl').css('display', 'none').eq($(this).index()).css('display', 'flex').parent().css('display', 'flex')
 })
@@ -63,3 +61,4 @@ $('.main-ww').hover(function() {
 }, function() {
     $('.main-ft > img').css('display', 'none').next().css('display', 'none')
 })
+

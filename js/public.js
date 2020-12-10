@@ -22,3 +22,22 @@ const nickname = getCookie('nickname')
 if (nickname) {
     $('.header-top').children().eq(0).html('你好!' + nickname)
 }
+
+
+
+$('.navul > ul > li').mouseover(function() {
+    $('.tow-boxl').css('display', 'none').eq($(this).index()).css('display', 'flex').parent().css('display', 'flex')
+})
+
+$('.navul > ul > li').mouseout(function() {
+    $('.tow-box').css('display', 'none')
+})
+$('.tow-boxl').mouseover(function() {
+    $(this).css('display', 'flex').parent().css('display', 'flex')
+})
+$('.tow-boxl').mouseout(function() {
+    $('.tow-box').css('display', 'none')
+})
+
+
+

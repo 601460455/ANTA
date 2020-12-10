@@ -127,3 +127,4 @@ function move() {
         console.log(bgx, bgy)
     })
 }
+

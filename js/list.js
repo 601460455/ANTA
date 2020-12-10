@@ -63,7 +63,6 @@ $(function() {
     // 2. 请求总页数, 回来渲染分页器
     getTotalPage()
     async function getTotalPage() {
-        console.log(list_info)
             // 2-1. 请求分页数据
         const totalInfo = await $.get('../server/getTotalPage.php', list_info, null, 'json')
 
@@ -79,30 +78,28 @@ $(function() {
     }
 
 
-    // getGoodsList()
+    getGoodsList()
     async function getGoodsList() {
 
         const goodsList = await $.get('../server/getGoodsList.php', list_info, null, 'json')
         list = goodsList.list
         let str = ''
-        console.log(goodsList)
         goodsList.list.forEach(item => {
             str += ` 
-          <li class="thumbnail">
-          <img src="${ item.goods_big_logo }" alt="...">
-          <div class="caption">
-            <h3 data-id="${ item.goods_id }">${ item.goods_name }</h3>
-            <p class="price">￥
-              <span class="text-danger">${ item.goods_price }</span>
-            </p>
-            <p>
-              <a href="javascript:;" class="btn btn-danger addCart" role="button" data-id="${ item.goods_id }">加入购物车</a>
-              <a href="./cart.html" class="btn btn-warning" role="button">去结算</a>
-            </p>
-          </div>
-        </li> `
+                <li class="thumbnail">
+                <img src="${ item.goods_big_logo }" alt="...">
+                <div class="caption">
+                    <h3 data-id="${ item.goods_id }">${ item.goods_name }</h3>
+                    <p class="price">￥
+                    <span class="text-danger">${ item.goods_price }</span>
+                    </p>
+                    <p>
+                    <a href="javascript:;" class="btn btn-danger addCart" role="button" data-id="${ item.goods_id }">加入购物车</a>
+                    <a href="./cart.html" class="btn btn-warning" role="button">去结算</a>
+                    </p>
+                </div>
+                </li> `
         })
-        $('.goodsList > ul').html('')
         $('.goodsList > ul').html(str)
     }
 
@@ -221,3 +218,4 @@ $('.left').eq(2).click(function() {
 $('.left').eq(3).click(function() {
     $('.right').eq(3).slideToggle()
 })
+
